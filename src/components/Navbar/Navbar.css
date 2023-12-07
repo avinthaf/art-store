@@ -1,0 +1,92 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: #fff;
+  }
+
+.navbar .cart {
+  margin-left: auto;
+  text-align: right;
+}
+
+.navbar .cart .qty {
+  font-size: 0.8rem;
+}
+
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .navbar-menu li {
+    margin: 0 10px;
+  }
+  
+  .navbar-menu li a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-menu li a:hover {
+    color: #999;
+  }
+  
+  .navbar-menu li a.active {
+    color: #999;
+  }
+
+  .mobile-nav {
+    display: none;
+    grid-template-columns: 1fr 5fr 1fr;
+    align-items: center;
+    padding: 10px;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: #fff;
+  }
+
+  .mobile-nav .navbar-logo {
+    text-align: center;
+  }
+
+  .mobile-nav .cart {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .mobile-nav .cart hr {
+    width: 20%;
+  }
+
+  @media screen and (max-width: 700px) {
+    .navbar {
+      display: none;
+    }
+    .mobile-nav {
+      display: grid;
+    }
+  }
