@@ -1,0 +1,25 @@
+.Alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 3%;
+    background-color: #000;
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    align-items: center;
+
+    transition: all ease-in-out 0.2s;
+}
+
+.Alert span {
+    text-align: right;
+    font-weight: bold;
+}
+
+.Alert span:hover {
+    cursor: pointer;
+}
+

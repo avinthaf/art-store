@@ -1,5 +1,9 @@
-import React, { useState, useRef } from 'react'
-import emailjs from '@emailjs/browser'
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
+import './Contact.css';
+
+import Alert from '../../components/Alert/Alert';
 
 const Contact = () => {
   const [firstName, setFirstName] = useState('')
@@ -7,6 +11,8 @@ const Contact = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [errors, setErrors] = useState({})
+
+  const [submitted, setSubmitState] = useState(false);
 
   const form = useRef()
 
@@ -35,13 +41,20 @@ const Contact = () => {
     const isValid = validateForm()
     if (isValid) {
       // Perform your desired action with the form data (e.g., send email, save to database, etc.)
-      emailjs.sendForm(import.meta.env.VITE_EMAIL_SERVICE_ID, import.meta.env.VITE_EMAIL_TEMPLATE_ID, form.current, import.meta.env.VITE_EMAIL_PUBLIC_KEY)
-      .then((result) => {
-          console.log(form.current)
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+      setSubmitState(true)
+      setTimeout(() => {
+        setSubmitState(false)
+      }, 2000)
+      // emailjs.sendForm(import.meta.env.VITE_EMAIL_SERVICE_ID, import.meta.env.VITE_EMAIL_TEMPLATE_ID, form.current, import.meta.env.VITE_EMAIL_PUBLIC_KEY)
+      // .then((result) => {
+      //   console.log(result)
+      //   setSubmitState(true)
+      //   setTimeout(() => {
+      //     setSubmitState(false)
+      //   }, 2000)
+      // }, (error) => {
+      //   console.log(error.text);
+      // });
       // Clear the form fields
       setFirstName('')
       setLastName('')
@@ -52,11 +65,13 @@ const Contact = () => {
   }
 
   return (
-    <div>
+    <div className="Contact">
+      <Alert isOpen={submitted} setSubmitState={setSubmitState}/>
       <h1>Contact</h1>
+      <p>Got questions about my art? Fill out the form below and I'll get back to you ASAP.</p>
       <form ref={form} onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="firstName">First Name</label>
+          <label htmlFor="firstName">First name</label>
           <input
             type="text"
             id="firstName"
@@ -67,7 +82,7 @@ const Contact = () => {
           {errors.firstName && <span className="error">{errors.firstName}</span>}
         </div>
         <div>
-          <label htmlFor="lastName">Last Name</label>
+          <label htmlFor="lastName">Last name</label>
           <input
             type="text"
             id="lastName"
@@ -78,7 +93,7 @@ const Contact = () => {
           {errors.lastName && <span className="error">{errors.lastName}</span>}
         </div>
         <div>
-          <label htmlFor="email">Email Address</label>
+          <label htmlFor="email">Email address</label>
           <input
             type="email"
             id="email"
@@ -91,6 +106,7 @@ const Contact = () => {
         <div>
           <label htmlFor="message">Message</label>
           <textarea
+            rows={10}
             id="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -98,7 +114,7 @@ const Contact = () => {
           ></textarea>
           {errors.message && <span className="error">{errors.message}</span>}
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="black">Submit</button>
       </form>
     </div>
   )
