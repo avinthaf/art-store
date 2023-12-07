@@ -27,7 +27,7 @@ const About = () => {
         </p>
       </div>
       <div className='right-col'>
-        <img src="https://i.ibb.co/xFvnZwb/pexels-cottonbro-studio-3778903.jpg"/>
+        <img src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaCMoe_6H5NeZgPzozzmKMVdS213Suq2V6EpELFh0hpvM1b1_IENb6S81fkwDdCMMie4qIupmHqzy95Exjh4ickHaZV_MA=s1600"/>
       </div>
     </div>
   )
