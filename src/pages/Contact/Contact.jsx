@@ -66,7 +66,7 @@ const Contact = () => {
 
   return (
     <div className="Contact">
-      <Alert isOpen={submitted} setSubmitState={setSubmitState}/>
+      <Alert isOpen={submitted} setSubmitState={setSubmitState}>Your message has been sent!</Alert>
       <h1>Contact</h1>
       <p>Got questions about my art? Fill out the form below and I'll get back to you ASAP.</p>
       <form ref={form} onSubmit={handleSubmit}>

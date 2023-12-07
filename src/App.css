@@ -2,6 +2,16 @@
     padding: 160px 3%;
 }
 
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    padding-bottom: 2rem;
+    z-index: 0;
+}
+
 @media screen and (max-width: 700px) {
     .App {
         padding: 100px 3%;

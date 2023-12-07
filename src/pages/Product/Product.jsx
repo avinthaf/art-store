@@ -6,9 +6,12 @@ import  secureLocalStorage  from  "react-secure-storage";
 
 import './Product.css'
 
+import Alert from '../../components/Alert/Alert';
+
 const Product = () => {
-  const [product, setProduct] = useState(null)
-  const { productId } = useParams()
+  const [product, setProduct] = useState(null);
+  const { productId } = useParams();
+  const [submitted, setSubmitState] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -95,11 +98,17 @@ const Product = () => {
     // Save the updated cart data to secure storage
     secureLocalStorage.setItem('cart', cartItems)
 
-    window.location.reload();
+    setSubmitState(true)
+    setTimeout(() => {
+      setSubmitState(false)
+      window.location.reload();
+    }, 1000)
+  
   }
 
   return (
     <div className="Product">
+      <Alert isOpen={submitted} setSubmitState={setSubmitState}>Item added to cart!</Alert>
       <nav aria-label="breadcrumb">
         <div className="breadcrumb">
           <NavLink exact to="/" className="breadcrumb-link">Home</NavLink>

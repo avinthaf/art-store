@@ -5,8 +5,8 @@ import { db } from '../../firebase'
 import './Cart.css'
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([])
-  const [subtotal, setSubtotal] = useState(0)
+  const [cartItems, setCartItems] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
 
   useEffect(() => {
     const fetchedCartItems = secureLocalStorage.getItem('cart') || []
@@ -54,6 +54,10 @@ const Cart = () => {
       updatedCartItems[index].quantity--
       updateCartItem(index, updatedCartItems)
     }
+    else if (updatedCartItems[index].quantity === 1) {
+      updatedCartItems.splice(index, 1)
+      updateCartItem(index, updatedCartItems)
+    }
     window.location.reload()
   }
 
@@ -95,6 +99,7 @@ const Cart = () => {
       .then(response => response.json())
       .then(result => {
         // Handle the response from the server
+        // secureLocalStorage.setItem('receiptId', result['client_reference_id'])
         window.location.replace(result)
       })
       .catch(error => {
