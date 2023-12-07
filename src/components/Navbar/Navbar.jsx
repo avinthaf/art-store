@@ -54,9 +54,9 @@ const Navbar = () => {
       </nav>
       <nav className='mobile-nav'>
         <Hamburger toggled={isOpen} toggle={setOpen} />
-        <NavLink to="/" className="navbar-logo">
+        <a href="/" className="navbar-logo">
           John Doe Art
-        </NavLink>
+        </a>
         <div className="cart">
           <NavLink to="/cart" className="navbar-cart-link">
             Cart

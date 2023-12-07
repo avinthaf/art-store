@@ -15,6 +15,13 @@
 .navbar .cart {
   margin-left: auto;
   text-align: right;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .cart hr {
+  width: 30px;
+  height: 2px;
 }
 
 .navbar .cart .qty {
@@ -81,7 +88,7 @@
   }
 
   .mobile-nav .cart hr {
-    width: 20%;
+    width: 30px;
   }
 
   @media screen and (max-width: 700px) {

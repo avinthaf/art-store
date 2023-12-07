@@ -1,0 +1,27 @@
+.About {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+}
+
+.About .right-col img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+
+}
+
+@media screen and (max-width: 1000px) {
+    .About {
+        grid-template-columns: 1fr;
+    }
+
+    .About .right-col {
+        order: -1;
+    }
+
+    .About .right-col img {
+        height: 500px;
+    }
+    
+}
