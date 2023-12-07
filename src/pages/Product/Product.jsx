@@ -68,7 +68,7 @@ const Product = () => {
       .then(response => response.json())
       .then(result => {
         // Handle the response from the server
-        window.open(result)
+        window.location.href = result
       })
       .catch(error => {
         // Handle any errors that occurred during the request
