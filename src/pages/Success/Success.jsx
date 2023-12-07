@@ -9,8 +9,8 @@ const Success = () => {
   }, [])
   return (
     <div className="Success">
-        <h1>Thank your for your order!</h1>
-        <p>Your should be shipped within 2-5 business days.</p>
+        <h1>Thank your for your purchase!</h1>
+        <p>Your order should be shipped within 2-5 business days.</p>
     </div>
   )
 }
