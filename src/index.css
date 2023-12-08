@@ -17,6 +17,10 @@ a {
     color: inherit;
 }
 
+a.active {
+  color: rgb(116, 115, 115);
+}
+
 button {
   padding: 0.5rem;
   border: 1px solid #000;

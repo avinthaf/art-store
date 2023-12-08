@@ -5,6 +5,10 @@
     text-transform: uppercase;
 }
 
+.Product .breadcrumb .breadcrumb-current {
+    color: grey;
+}
+
 .Product .product-details {
     display: grid;
     grid-template-columns: 1.5fr 1fr;

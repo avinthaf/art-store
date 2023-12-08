@@ -113,8 +113,8 @@ const Product = () => {
         <div className="breadcrumb">
           <NavLink exact to="/" className="breadcrumb-link">Home</NavLink>
             <span className="breadcrumb-separator"> / </span>
-          <NavLink to={`/category/${category}`} className="breadcrumb-link">{`${category}`}</NavLink>
-          <span className="breadcrumb-separator"> / </span>
+          {/* <NavLink to={`/category/${category}`} className="breadcrumb-link">{`${category}`}</NavLink>
+          <span className="breadcrumb-separator"> / </span> */}
           <span className="breadcrumb-current">{title}</span>
         </div>
       </nav>

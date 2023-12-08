@@ -23,32 +23,32 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="cart">
-          <NavLink to="/cart" className="navbar-cart-link">
+          <a href="/cart" className="navbar-cart-link">
             Cart
-          </NavLink>
+          </a>
           <hr/>
           <div className="qty">
             {cartQty}
           </div>
         </div>
-        <NavLink to="/" className="navbar-logo">
+        <a href="/" className="navbar-logo">
           John Doe Art
-        </NavLink>
+        </a>
         <ul className="navbar-menu">
           <li>
-            <NavLink exact to="/" className="navbar-menu-item" activeClassName="active">
+            <a href="/" className={`navbar-menu-item ${window.location.pathname === '/' && 'active'}`} >
               HOME
-            </NavLink>
+            </a>
           </li>
           <li>
-            <NavLink to="/about" className="navbar-menu-item" activeClassName="active">
+            <a href="/about"className={`navbar-menu-item ${window.location.pathname === '/about' && 'active'}`} >
               ABOUT
-            </NavLink>
+            </a>
           </li>
           <li>
-            <NavLink to="/contact" className="navbar-menu-item" activeClassName="active">
+            <a href="/contact" className={`navbar-menu-item ${window.location.pathname === '/contact' && 'active'}`} >
               CONTACT
-            </NavLink>
+            </a>
           </li>
         </ul>
       </nav>
@@ -58,9 +58,9 @@ const Navbar = () => {
           John Doe Art
         </a>
         <div className="cart">
-          <NavLink to="/cart" className="navbar-cart-link">
+          <a href="/cart" className="navbar-cart-link">
             Cart
-          </NavLink>
+          </a>
           <hr />
           <div className="qty">
             {cartQty}
